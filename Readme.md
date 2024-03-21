@@ -1,3 +1,8 @@
+# Francesco's personal notes
+Modifications are compatible with `python_version==3.9.18`.
+
+Activate the correct virtual env, `cd scripts` and run it with the corresponding flags denoted in the scripts:
+`python3 ./run_mot_challenge.py --TRACKERS_TO_EVAL=MPNTrack --BENCHMARK=MOT20` 
 
 # TrackEval
 *Code for evaluating object tracking.*

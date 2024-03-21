@@ -33,15 +33,24 @@ Command Line Arguments: Defaults, # Comments
         'METRICS': ['HOTA', 'CLEAR', 'Identity', 'VACE']
 """
 
+
 import sys
 import os
 import argparse
 from multiprocessing import freeze_support
 
+import numpy as np
+from packaging import version
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import trackeval  # noqa: E402
+import trackeval # noqa: E402
 
 if __name__ == '__main__':
+    if version.parse(np.__version__) >= version.parse("1.24.0"):
+        np.float = np.float32
+        np.int = np.int32
+        np.bool = bool
+
     freeze_support()
 
     # Command line interface:
